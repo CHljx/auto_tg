@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div class="wrapper-video {{style.value}}">
+        <a data-type="{{type.value}}" href="{{href.value}}"  target="_blank">
+            <img src="{{image.value}}" class="img"/>
+            {{#if video.value}}
+            <video data-src="{{video.value}}" loop class="video" data-lazyload="{{lazyLoad.value}}"></video>
+            {{/if}}
+        </a>
+    </div>
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            "type":{
+                "label":"TypeID",
+                "value":201
+            },
+            "image":{
+                "label":"加载图",
+                "value":"http://imgtg.37wan.com/u/2017/0705/05123805LrCTV.jpg"
+            },
+            "video":{
+                "label":"视频",
+                "value":"http://imgtg.37wan.com/u/2017/0705/05123831gyge6.mp4"
+            },
+            "style":{
+                "label":"固定位置",
+                "value":"fixed-left",
+                "options":[
+                    {"label":"固定左侧","value":"fixed-left"},
+                    {"label":"固定左侧","value":"fixed-right"},
+                    {"label":"固定左侧","value":"fixed-br"}
+                ]
+            },
+            "lazyLoad":{
+                "label":"是否延迟加载(如果配置为是,将在鼠标Hover的时候才开始加载视频)",
+                "value":false,
+                "options":[
+                    {"label":"否","value":false},
+                    {"label":"是","value":true}
+                ]
+            }
+        };
+        $("#app").html( template(context));
+        fn();
+    });
+</script>
+</body>
+</html>

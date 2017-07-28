@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div class="container-hot-games">
+        {{#each list.value}}
+        <div class="container-hot-game" data-type="{{this.type.value}}"
+             href="{{this.url.value}}">
+            <img src="{{this.img.value}}" class="item-img">
+            <p class="txt-info">{{this.info.value}}</p><a class="btn-hover"></a> <a class="btn">开始游戏</a>
+            <div class="box-img-mask"></div>
+            <div class="box-img top box-img-bg"><img src="{{this.img_bg.value}}"></div>
+            <div class="box-img top box-img-ren"><img src="{{this.img_ren.value}}"></div>
+            <div class="box-img bottom box-img-info"><img src="{{this.img_info.value}}"></div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            "list":{
+                "label": "图片列表",
+                "value":[
+                    {
+                        "url":{
+                            "label":"跳转链接",
+                            "value":"http://bdtg.37.com/s/1/727/4120.html?ad_type=122&"
+                        },
+                        "img":{
+                            "label":"列表图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09163444IoT0F.jpg"
+                        },
+                        "img_bg":{
+                            "label":"背景图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09165044bKDfE.png"
+                        },
+                        "img_ren":{
+                            "label":"人物图",
+                            "value":"http://imgtg.37wan.com/u/2017/0714/14114821IopzA.png"
+                        },
+                        "img_info":{
+                            "label":"Logo大图",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/0916505489Mp0.png"
+                        },
+                        "info":{
+                            "label":"文案",
+                            "value":"37游戏《金装传奇》正版授权，今日火爆开测！"
+                        },
+                        "type":{
+                            "label":"typeId",
+                            "value":"203"
+                        }
+                    },
+                    {
+                        "url":{
+                            "label":"跳转链接",
+                            "value":"http://bdtg.37.com/s/1/727/4120.html?ad_type=122&"
+                        },
+                        "img":{
+                            "label":"列表图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09163444IoT0F.jpg"
+                        },
+                        "img_bg":{
+                            "label":"背景图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09165044bKDfE.png"
+                        },
+                        "img_ren":{
+                            "label":"人物图",
+                            "value":"http://imgtg.37wan.com/u/2017/0714/14114821IopzA.png"
+                        },
+                        "img_info":{
+                            "label":"Logo大图",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/0916505489Mp0.png"
+                        },
+                        "info":{
+                            "label":"文案",
+                            "value":"37游戏《金装传奇》正版授权，今日火爆开测！"
+                        },
+                        "type":{
+                            "label":"typeId",
+                            "value":"203"
+                        }
+                    },
+                    {
+                        "url":{
+                            "label":"跳转链接",
+                            "value":"http://bdtg.37.com/s/1/727/4120.html?ad_type=122&"
+                        },
+                        "img":{
+                            "label":"列表图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09163444IoT0F.jpg"
+                        },
+                        "img_bg":{
+                            "label":"背景图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09165044bKDfE.png"
+                        },
+                        "img_ren":{
+                            "label":"人物图",
+                            "value":"http://imgtg.37wan.com/u/2017/0714/14114821IopzA.png"
+                        },
+                        "img_info":{
+                            "label":"Logo大图",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/0916505489Mp0.png"
+                        },
+                        "info":{
+                            "label":"文案",
+                            "value":"37游戏《金装传奇》正版授权，今日火爆开测！"
+                        },
+                        "type":{
+                            "label":"typeId",
+                            "value":"203"
+                        }
+                    },
+                    {
+                        "url":{
+                            "label":"跳转链接",
+                            "value":"http://bdtg.37.com/s/1/727/4120.html?ad_type=122&"
+                        },
+                        "img":{
+                            "label":"列表图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09163444IoT0F.jpg"
+                        },
+                        "img_bg":{
+                            "label":"背景图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/09165044bKDfE.png"
+                        },
+                        "img_ren":{
+                            "label":"人物图",
+                            "value":"http://imgtg.37wan.com/u/2017/0714/14114821IopzA.png"
+                        },
+                        "img_info":{
+                            "label":"Logo大图",
+                            "value":"http://imgtg.37wan.com/u/2017/0509/0916505489Mp0.png"
+                        },
+                        "info":{
+                            "label":"文案",
+                            "value":"37游戏《金装传奇》正版授权，今日火爆开测！"
+                        },
+                        "type":{
+                            "label":"typeId",
+                            "value":"203"
+                        }
+                    }
+                ]
+            }
+        };
+        $("#app").html( template(context));
+        fn();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "name": "Image_Mask",
+  "ownerType": "IMAGE",
+  "description": "图片+文字描述+星级展示度，鼠标经过展示文案+开始按钮",
+  "options": {
+    "script": true,
+    "draggable": true,
+    "resizableSelector": ".box"
+  },
+  "html": {
+    "list":{
+      "label":"图片列表",
+      "value":[
+        {
+          "img":{
+            "label":"图片",
+            "value":"http://imgtg.37wan.com/u/2017/0606/1496721103026745720.jpg"
+          },
+          "text":{
+            "label":"文案",
+            "value":"功盖天地我为尊，超S级福利限时领取！"
+          },
+          "href":{
+            "label":"链接",
+            "value":"http://bdtg.37.com/s/1/1140/6654.html?ad_type=2001&uid=&wd="
+          },
+          "type":{
+            "label":"TypeID",
+            "value":2001
+          },
+          "title":{
+            "label":"标题",
+            "value":"九天封神"
+          },
+          "star": {
+            "label":"星级",
+            "value":50,
+            "options":[
+              {"label":"无星","value":"0"},
+              {"label":"1星","value":"19"},
+              {"label":"2星","value":"35"},
+              {"label":"3星","value":"50"},
+              {"label":"4星","value":"65"},
+              {"label":"5星","value":"80"}
+            ]
+          },
+          "score":{
+            "label":"分数"
+            "value":9.8
+          },
+          "isMask":{
+            "label":"是否显示遮罩",
+            "value":true
+          }
+        }
+      ]
+    }
+  },
+  "css": {
+    ".item":{
+      "label":"图片宽度",
+      "editable": ["width"]
+    },
+    ".wrapper-img":{
+      "label":"图片高度",
+      "editable": ["height"]
+    },
+    ".wrapper-btn":{
+      "label":"按钮高度",
+      "editable":["height"]
+    },
+    ".btn":{
+      "label":"按钮设置",
+      "editable":["width","background-image","background-repeat"]
+    },
+    ".title":{
+      "label":"标题设置",
+      "editable":["color","font-size"]
+    }
+  }
+}

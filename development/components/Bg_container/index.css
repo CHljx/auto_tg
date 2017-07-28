@@ -1,0 +1,9 @@
+.bg-container{
+    background-image:url(./images/bg.jpg);
+    background-color:#fff;
+    background-repeat:no-repeat;
+    width:996px;
+    height:273px;
+    border-color:orange;
+    border-width:0px;
+}

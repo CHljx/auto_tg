@@ -1,0 +1,25 @@
+{
+  // 组件的名字
+  "name": "Input",
+  // 组件所属的分类，这里表示它属于 BUTTON 这个分类
+  "ownerType": "BUTTON",
+  // 组件的描述，向用户描述这个组件的基本信息
+  "description": "给用户展示一个Input输入框",
+  "options": {
+    "script": false, // 标识这个组件是否需要加载 js 文件，默认为 false
+    "draggable": true, // 标识这个组件是否允许在可视化编辑中被拖动，默认为 true （对于那些定位为 fixed的组件，应该设置为 false）
+    "resizableSelector": "" // 标识缩放一个组件时，被修改（宽、高）的 css 选择器。默认为空""，表示不能缩放大小
+  },
+  "html": {
+    "placeholder":{
+      "label":"修改PlaceHolder",
+      "value":""
+    },
+    "inputvalue":{
+      "label":"修改文本框默认值",
+      "value":""
+    }
+  },
+  "css": {
+  }
+}

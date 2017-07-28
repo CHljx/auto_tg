@@ -1,0 +1,29 @@
+<div class="box">
+    <ul class="server-list">
+        {{#each list.value}}
+        {{#if @index}}
+        <li>
+        {{else}}
+        <li class="active">
+        {{/if}}
+            <div class="brief">
+                <span class="num">{{add @index}}</span>
+                <a data-type="{{type.value}}" href="{{href.value}}" class="title" target="_blank">{{title.value}}</a>
+                {{#if image.value}}
+                <span class="icon"></span>
+                {{else}}
+                <a data-type="{{type.value}}" href="{{href.value}}" target="_blank" class="btn">开始游戏</a>
+                {{/if}}
+            </div>
+            {{#if listType.value}}
+            <div class="detail">
+                <a data-type="{{type.value}}" href="{{href.value}}" target="_blank"><img class="img" src="{{image.value}}"/></a>
+                <h4>{{title.value}}</h4>
+                <p class="text">{{tips.value}}</p>
+                <a data-type="{{type.value}}" href="{{href.value}}" target="_blank" class="btn">开始游戏</a>
+            </div>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

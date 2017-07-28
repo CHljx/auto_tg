@@ -1,0 +1,19 @@
+<div class="wrapper-video-banner">
+    <div class="box-video-banner">
+        {{#each list.value}}
+        <div class="item-container" data-index="{{@index}}">
+            <div class="box-item">
+                <a href="{{href.value}}" data-type="{{typeId.value}}" target="_blank">
+                    <div class="item-box-img">
+                        <img src="{{img.value}}" class="img"/>
+                    </div>
+                    <div class="item-box-video">
+                        <img src="{{loadImg.value}}" class="img"/>
+                        <video data-src="{{video.value}}" loop class="video" data-lazyload=true></video>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

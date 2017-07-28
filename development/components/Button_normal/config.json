@@ -1,0 +1,30 @@
+{
+  "name": "Button",
+  "ownerType": "BUTTON",
+  "description": "一个按钮，有普通状态以及鼠标经过的hover状态，可设置跳转链接",
+  "options": {
+    "script": false,
+    "draggable": true,
+    "resizableSelector": ".link"
+  },
+  "html": {
+    "href": {
+      "label": "跳转链接",
+      "value": "http://www.37.com/"
+    },
+    "type":{
+      "label":"Type ID",
+      "value":""
+    }
+  },
+  "css": {
+    ".link": {
+      "label": "按钮",
+      "editable": ["width", "height", "background-image","background-color"]
+    },
+    ".link:hover": {
+      "label": "鼠标经过时",
+      "editable": ["background-image","background-color"]
+    }
+  }
+}

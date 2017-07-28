@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div>
+        <ul class="server-list">
+            {{#each list.value}}
+            {{#if @index}}
+            <li>
+            {{else}}
+            <li class="active">
+            {{/if}}
+                <div class="brief">
+                    <span class="num">{{add @index}}</span>
+                    <a data-type="{{type.value}}" href="{{href.value}}" class="title" target="_blank">{{title.value}}</a>
+                    <span class="icon"></span>
+                </div>
+                <div class="detail">
+                    <a data-type="{{type.value}}" href="{{href.value}}" target="_blank"><img class="img" src="{{image.value}}"/></a>
+                    <h4>{{title.value}}</h4>
+                    <p class="text">{{tips.value}}</p>
+                    <a data-type="{{type.value}}" href="{{href.value}}" target="_blank" class="btn">开始游戏</a>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    Handlebars.registerHelper('add', function(str){
+        return str+1;
+    });
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            "offset":1,
+            "list":{
+                "label": "图片列表",
+                "value":[
+                    {
+                        "type":{
+                            "label":"TypeId",
+                            "value":102
+                        },
+                        "href":{
+                            "label":"跳转链接",
+                            "value":"http://bdtg.37.com/s/1/1140/44315.html?ad_type=102&uid=&wd="
+                        },
+                        "image":{
+                            "label":"图片",
+                            "value":"http://imgtg.37wan.com/u/2017/0525/25142305rAJNN.jpg"
+                        },
+                        "title":{
+                            "label":"游戏名",
+                            "value":"木瓜奇迹"
+                        },
+                        "tips":{
+                            "label":"文案",
+                            "value":"奇迹MU"
+                        }
+                    }
+                ]
+            }
+        };
+        $("#app").html( template(context));
+        fn();
+    });
+</script>
+</body>
+</html>

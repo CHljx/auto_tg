@@ -1,0 +1,73 @@
+{
+  "name": "Server_List",
+  "ownerType": "SERVERLIST",
+  "description": "开服列表",
+  "options": {
+    "script": true,
+    "draggable": true,
+    "resizableSelector": ".server-list"
+  },
+  "html": {
+    "list":{
+      "label": "图片列表",
+      "value":[
+        {
+          "listType":{
+            "label":"开服表/排行榜",
+            "value":true,
+            "options":[
+              {"label":"排行榜","value":""},
+              {"label":"开服表","value":true}
+            ]
+          },
+          "type":{
+            "label":"TypeId",
+            "value":102
+          },
+          "href":{
+            "label":"跳转链接",
+            "value":"http://bdtg.37.com/s/1/1140/44315.html?ad_type=102&uid=&wd="
+          },
+          "image":{
+            "label":"图片",
+            "value":"http://imgtg.37wan.com/u/2017/0525/25142305rAJNN.jpg"
+          },
+          "title":{
+            "label":"游戏名",
+            "value":"木瓜奇迹"
+          },
+          "tips":{
+            "label":"文案",
+            "value":"奇迹MU"
+          }
+        }
+      ]
+    }
+  },
+  "css": {
+    ".server-list":{
+      "label":"容器宽度",
+      "editable":["width"]
+    },
+    ".img":{
+      "label":"图片配置",
+      "editable":["width","height"]
+    },
+    ".btn":{
+      "label":"按钮配置",
+      "editable":["background-color","color"]
+    },
+    ".btn:hover":{
+      "label":"按钮Hover配置",
+      "editable":["background-color","color"]
+    },
+    ".num":{
+      "label":"序号配置",
+      "editable":["background-color","color"]
+    },
+    ".server-list li.active .num":{
+      "label":"序号Hover配置",
+      "editable":["background-color","color"]
+    }
+  }
+}

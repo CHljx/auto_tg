@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div>
+        <ul class="server-list">
+            {{#each list.value}}
+            <li class="item">
+                <div class="wrapper-img">
+                    <a data-type="{{type.value}}" href="{{href.value}}" target="_blank">
+                        <img src="{{img.value}}"/>
+                        {{#if isMask.value}}
+                            <div class="wrapper-hover">
+                                <div class="mask"></div>
+                                {{#if text.value}}
+                                    <div class="wrapper-text">{{text.value}}</div>
+                                    <div class="wrapper-btn"><button class="btn">开始游戏</button></div>
+                                {{else}}
+                                <div class="wrapper-btn" style="top:0px;"><button class="btn">开始游戏</button></div>
+                                {{/if}}
+
+                            </div>
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="wrapper-title">
+                    <a data-type="{{type.value}}" href="{{href.value}}" class="title" target="_blank">
+                        {{title.value}}
+                    </a>
+                </div>
+                {{#if star.value}}
+                    <div class="wrapper-star">
+                        <div class="star" style="width:{{star.value}}px"></div>
+                        <span class="score">{{score.value}}</span>
+                    </div>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            "list":{
+                "value":[
+                    {
+                        "img":{
+                            "value":"http://imgtg.37wan.com/u/2017/0606/1496721103026745720.jpg"
+                        },
+                        "text":{
+                            "value":"功盖天地我为尊，超S级福利限时领取！"
+                        },
+                        "href":{
+                            "value":"http://bdtg.37.com/s/1/1140/6654.html?ad_type=2001&uid=&wd="
+                        },
+                        "type":{
+                            "value":2001
+                        },
+                        "title":{
+                            "value":"九天封神"
+                        },
+                        "star":{
+                            "value":50
+                        },
+                        "score":{
+                            "value":9.8
+                        },
+                        "isMask":{
+                            "label":"是否显示遮罩",
+                            "value":true
+                        }
+                    },
+                    {
+                        "img":{
+                            "value":"http://imgtg.37wan.com/u/2017/0606/1496721103026745720.jpg"
+                        },
+                        "text":{
+                            "value":""
+                        },
+                        "href":{
+                            "value":"http://bdtg.37.com/s/1/1140/6654.html?ad_type=2001&uid=&wd="
+                        },
+                        "type":{
+                            "value":2001
+                        },
+                        "title":{
+                            "value":"九天封神"
+                        },
+                        "star":{
+                            "value":0
+                        },
+                        "score":{
+                            "value":9.8
+                        },
+                        "isMask":{
+                            "label":"是否显示遮罩",
+                            "value":false
+                        }
+                    }
+                ]
+            }
+        };
+        $("#app").html( template(context));
+        fn();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<div class="box">
+    <ul class="server-list">
+        {{#each list.value}}
+        <li class="item">
+            <div class="wrapper-img">
+                <a data-type="{{type.value}}" href="{{href.value}}" target="_blank">
+                    <img src="{{img.value}}"/>
+                    {{#if isMask.value}}
+                    <div class="wrapper-hover">
+                        <div class="mask"></div>
+                        {{#if text.value}}
+                        <div class="wrapper-text">{{text.value}}</div>
+                            {{#if isBtn.value}}
+                                <div class="wrapper-btn"><button class="btn">开始游戏</button></div>
+                            {{/if}}
+                        {{else}}
+                            {{#if isBtn.value}}
+                            <div class="wrapper-btn"><button class="btn">开始游戏</button></div>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                </a>
+            </div>
+            <div class="wrapper-title">
+                <a data-type="{{type.value}}" href="{{href.value}}" class="title" target="_blank">
+                    {{title.value}}
+                </a>
+            </div>
+            {{#if star.value}}
+            <div class="wrapper-star">
+                <div class="star" style="width:{{star.value}}px"></div>
+                <span class="score">{{score.value}}</span>
+            </div>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

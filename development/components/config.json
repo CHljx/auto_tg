@@ -1,0 +1,30 @@
+{
+  "typeMap": {
+    "COMMON": {
+        "label": "通用",
+        "subTypeMap": {
+            "COMMON": "未分类",
+            "TEXT": "文字",
+            "IMAGE": "图片",
+            "LINK": "链接",
+            "BUTTON": "按钮",
+            "KV": "轮播图",
+            "VIDEO": "视频",
+            "TAB": "内容切换",
+            "NAV": "导航",
+            "MEDIA": "媒体相关",
+            "TEMPLATE": "专题模板",
+            "FLASH": "Flash",
+            "SHARE": "百度分享"
+        }
+    },
+    "ZT": {
+        "label": "专题",
+        "subTypeMap": {
+            "COMMON": "未分类",
+            "MEDIA": "媒体相关",
+            "TEMPLATE": "专题模板"
+        }
+    }
+  }
+}

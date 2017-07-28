@@ -1,0 +1,47 @@
+{
+  "name": "Video_Couplet",
+  "ownerType": "VIDEO",
+  "description": "固定位置视频组件,固定在网页左侧，右侧或是右下角",
+  "options": {
+    "script": true,
+    "draggable": false,
+    "resizableSelector": ""
+  },
+  "html": {
+    "type":{
+      "label":"TypeID",
+      "value":201
+    },
+    "image":{
+      "label":"加载图",
+      "value":"http://imgtg.37wan.com/u/2017/0210/10151038U4CJU.jpg"
+    },
+    "video":{
+      "label":"视频链接",
+      "value":"http://imgtg.37wan.com/u/2017/0210/10151045scV1f.mp4"
+    },
+    "style":{
+      "label":"固定位置",
+      "value":"fixed-left",
+      "options":[
+        {"label":"固定左侧","value":"fixed-left"},
+        {"label":"固定右侧","value":"fixed-right"},
+        {"label":"固定右下角","value":"fixed-br"}
+      ]
+    },
+    "lazyLoad":{
+      "label":"是否延迟加载(如果配置为是,将在鼠标Hover的时候才开始加载视频)",
+      "value":false,
+      "options":[
+        {"label":"否","value":false},
+        {"label":"是","value":true}
+      ]
+    }
+  },
+  "css": {
+    ".wrapper-video":{
+      "label":"组件设置(如果固定在左右2侧，请保证margin-top：-height/2；如果固定在右下角，请保证margin-top:0)",
+      "editable":["width","height","margin-top"]
+    }
+  }
+}

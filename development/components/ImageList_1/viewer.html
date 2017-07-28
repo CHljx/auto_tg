@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div>
+    {{#each list}}
+    <dl class="list-item">
+        <dt class="item-wrapper-img">
+            <a data-type="{{this.type}}" href="{{this.link}}" title="{{this.hovertitle}}" target="_blank">
+                <img class="item-img" src="{{this.image}}" alt="插图:{{this.name}}">
+            </a>
+        </dt>
+        <dd>
+            <h4 class="item-wrapper-name">
+                <a data-type="{{this.type}}" class="item-name" href="{{this.link}}" title="{{this.hovertitle}}" target="_blank">{{this.name}}</a>
+                <a data-type="{{this.type}}" class="item-go" href="{{this.hovertitle}}" title="{{this.hovertitle}}" target="_blank"></a>
+            </h4>
+            <p class="item-wrapper-tips">
+                <em>简介：</em>
+                {{this.tips}}
+            </p>
+        </dd>
+    </dl>
+    {{/each}}
+    </div>
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+        fn();
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            list:[
+                {
+                    type:102,
+                    link:"http://bdtg.37.com/s/1/1140/44315.html?ad_type=102&uid=&wd=",
+                    image:"//imgtg.37wan.com/u/2017/0623/23191402K0kkY.jpg",
+                    name:"楚乔传",
+                    tips:"同名影视剧正版授权，神兵在手，美人在怀，再现南北朝乱世情缘！"
+                },
+                {
+                    type:103,
+                    link:"http://bdtg.37.com/s/1/1140/44316.html?ad_type=103&uid=&wd=",
+                    image:"//imgtg.37wan.com/u/2017/0527/27110642xPsXn.jpg",
+                    name:"西游伏妖篇",
+                    tips:"同名电影正版IP授权改编，公测豪礼乐享不停！"
+                },
+                {
+                    type:104,
+                    link:"http://bdtg.37.com/s/1/1140/44317.html?ad_type=104&uid=&wd=",
+                    image:"//imgtg.37wan.com/u/2017/0622/22102841kQEgf.jpg",
+                    name:"金装传奇",
+                    tips:"热血史诗,原汁原味!汇八方兄弟,续经典之作!"
+                },
+            ]
+        };
+        $("#app").html( template(context));
+    });
+</script>
+</body>
+</html>

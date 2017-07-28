@@ -1,0 +1,57 @@
+{
+  "name": "ImageList_1",
+  "ownerType": "IMAGE",
+  "description": "",
+  "options": {
+    "script": false,
+    "draggable": true,
+    "resizableSelector": ".wrapper-list"
+  },
+  "html": {
+    "list":{
+      "label": "图片列表",
+      "value":[
+        {
+          "type":{
+            "label":"TypeId",
+             "value":102
+          },
+          "link":{
+            "label":"跳转链接",
+            "value":"http://bdtg.37.com/s/1/1140/44315.html?ad_type=102&uid=&wd="
+          },
+          "image":{
+            "label":"图片",
+            "value":"//imgtg.37wan.com/u/2017/0623/23191402K0kkY.jpg"
+          },
+          "name":{
+            "label":"游戏名",
+            "value":"楚乔传"
+          },
+          "tips":{
+            "label":"文案",
+            "value":"同名影视剧正版授权，神兵在手，美人在怀，再现南北朝乱世情缘！"
+          }
+        }
+      ]
+    }
+  },
+  "css": {
+    ".wrapper-list":{
+      "label":"容器宽度",
+      "editable":["width"]
+    },
+    ".list-item":{
+      "label":"列表宽度",
+      "editable": ["width"]
+    },
+    ".item-img":{
+      "label":"图片配置",
+      "editable": ["width","height"]
+    },
+    ".item-go":{
+      "label":"按钮配置",
+      "editable": ["width","height","background-image"]
+    }
+  }
+}

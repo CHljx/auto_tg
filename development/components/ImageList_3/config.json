@@ -1,0 +1,65 @@
+{
+  "name": "ImageList_3",
+  "ownerType": "IMAGE",
+  "description": "",
+  "options": {
+    "script": true,
+    "draggable": true,
+    "resizableSelector": ".container-hot-games"
+  },
+  "html": {
+    "list":{
+      "label": "图片列表",
+      "value":[
+         {
+            "url":{
+               "label":"跳转链接",
+               "value":"http://bdtg.37.com/s/1/727/4120.html?ad_type=122&" 
+            },
+            "img":{
+               "label":"列表图片",
+               "value":"http://imgtg.37wan.com/u/2017/0509/09163444IoT0F.jpg" 
+            },
+            "img_bg":{
+               "label":"背景图片",
+               "value":"http://imgtg.37wan.com/u/2017/0509/09165044bKDfE.png" 
+            },
+            "img_ren":{
+               "label":"人物图",
+               "value":"http://imgtg.37wan.com/u/2017/0714/14114821IopzA.png"
+            },
+            "img_info":{
+               "label":"Logo大图",
+               "value":"http://imgtg.37wan.com/u/2017/0509/0916505489Mp0.png" 
+            },
+            "info":{
+               "label":"文案",
+               "value":"37游戏《金装传奇》正版授权，今日火爆开测！" 
+            },
+            "type":{
+               "label":"typeId",
+               "value":"203" 
+            }
+         }
+      ]
+    }
+  },
+  "css": {
+    ".container-hot-game":{
+      "label":"列表配置",
+      "editable": ["width","height","background-image","background-color"]
+    },
+    ".item-img":{
+      "label":"图片配置",
+      "editable": ["width","height"]
+    },
+    ".btn":{
+      "label":"按钮配置",
+      "editable": ["width","height","color","background-color","background-image"]
+    },
+    ".txt-info":{
+      "label":"文案配置",
+      "editable": ["color","font-size"]
+    }
+  }
+}

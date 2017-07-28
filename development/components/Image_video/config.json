@@ -1,0 +1,34 @@
+{
+  "name": "Image_video",
+  "ownerType": "IMAGE",
+  "description": "鼠标移动到组件上，将显示视频，移开则显示图片",
+  "options": {
+    "script": true,
+    "draggable": true,
+    "resizableSelector": ".wrapper-img-video"
+  },
+  "html": {
+    "href": {
+      "label": "跳转链接",
+      "value": "http://www.37.com/"
+    },
+    "type":{
+      "label":"Type ID",
+      "value":""
+    },
+    "image": {
+      "label": "图片",
+      "value": "http://imgtg.37wan.com/u/2017/0614/14111800ONmeY.jpg"
+    },
+    "video":{
+      "label":"视频",
+      "value":"http://imgtg.37wan.com/u/2017/0613/13114408WNrZ2.mp4"
+    }
+  },
+  "css": {
+    ".wrapper-img-video": {
+      "label": "组件高宽",
+      "editable": ["width", "height"]
+    }
+  }
+}

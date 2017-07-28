@@ -1,0 +1,77 @@
+.server-list{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    width: 280px;
+}
+.server-list li{
+    border-bottom: 1px solid #dcdcdc;
+    padding: 9px 0px;
+}
+.brief{
+    padding: 0px 6px;
+    position:relative;
+}
+.num{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    background-color: #bdbdbd;
+}
+.title{
+    margin-left: 10px;
+    color: #000;
+}
+.detail{
+    padding: 8px 6px 0px;
+    overflow: auto;
+    position: relative;
+    display:none;
+}
+.server-list li.active .detail{
+    display:block;
+}
+.server-list li.active .num{
+    background-color:orange;
+}
+.img{
+    float: left;
+    margin-right: 13px;
+    width: 126px;
+    height: 86px;
+}
+.text{
+    color: #999;
+}
+.btn{
+    background-color: orange;
+    color: #fff;
+    outline: none;
+    border: 0px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+}
+.brief .btn{
+    right:0px;
+}
+.btn:hover{
+    text-decoration: underline;
+    background-color:#f19e07;
+    color:#f9f9f9;
+}
+.icon{
+    background-image: url(./images/i.png);
+    background-position-x: 0px;
+    background-position-y: 0px;
+    float: right;
+    width: 11px;
+    height: 15px;
+    display: block;
+    margin-top: 5px;
+}

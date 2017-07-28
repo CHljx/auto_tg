@@ -1,0 +1,14 @@
+{
+  "name": "",
+  "ownerType": "",
+  "description": "",
+  "options": {
+    "script": false,
+    "draggable": true,
+    "resizableSelector": ""
+  },
+  "html": {
+  },
+  "css": {
+  }
+}

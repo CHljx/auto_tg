@@ -1,0 +1,21 @@
+<div class="wrapper-list">
+    {{#each list.value}}
+    <dl class="list-item">
+        <dt class="item-wrapper-img">
+            <a data-type="{{this.type.value}}" href="{{this.link.value}}" title="{{this.hovertitle.value}}" target="_blank">
+                <img class="item-img" src="{{this.image.value}}" alt="插图:{{this.name.value}}">
+            </a>
+        </dt>
+        <dd>
+            <h4 class="item-wrapper-name">
+                <a data-type="{{this.type.value}}" class="item-name" href="{{this.link.value}}" title="{{this.hovertitle.value}}" target="_blank">{{this.name.value}}</a>
+                <a data-type="{{this.type.value}}" class="item-go" href="{{this.link.value}}" title="{{this.hovertitle.value}}" target="_blank"></a>
+            </h4>
+            <p class="item-wrapper-tips">
+                <span>简介：</span>
+                {{this.tips.value}}
+            </p>
+        </dd>
+    </dl>
+    {{/each}}
+</div>
