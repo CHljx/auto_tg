@@ -8,6 +8,10 @@
     "resizableSelector": ""
   },
   "html": {
+    "href":{
+      "label":"跳转链接",
+      "value":""
+    },
     "type":{
       "label":"TypeID",
       "value":201
