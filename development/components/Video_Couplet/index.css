@@ -9,16 +9,19 @@
 }
 .fixed-left{
     position:fixed;
+	_position:absolute;
     left:0px;
     top:50%;
 }
 .fixed-right{
     position:fixed;
+	_position:absolute;
     right:0px;
     top:50%;
 }
 .fixed-br{
     position:fixed;
+	_position:absolute;
     right:0px;
     bottom:0px;
 }

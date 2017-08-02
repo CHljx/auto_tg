@@ -19,20 +19,30 @@ define(["SQ"], function($) {
             });
         }
         // 从这里开始写你的代码
-        $(__(".wrapper-img-video")).mouseenter(function(){
-            var $this=$(this);
-            var $video=$this.find("video");
+
+		var $videoWrapper=$(__(".wrapper-img-video"));
+		var $video=$videoWrapper.find("video");
+		var $img=$videoWrapper.find("img");
+		 
+        $videoWrapper.mouseenter(function(){
             if(!$video.data("loaded")){
                 $video.attr("src",$video.data("src"));
                 $video.data("loaded",true);
-                $video.on("play",function(){
-                   $this.addClass(__("loaded"));
+                $video.on("canplay",function(){
+					$video.show();
+					$img.hide();
+                   $video.on("play",function(){
+					   $video.show();
+						$img.hide();
+				   }).on("pause",function(){
+					    $video.hide();
+					 $img.show();
+				   })
                 })
             }
             $video.trigger("play");
         }).mouseleave(function(){
-            var $this=$(this);
-            $this.find("video").trigger("pause");
+            $video.trigger("pause");
         });
     }
 });

@@ -108,6 +108,10 @@ module.exports = function(grunt){
         },
 
         cssmin: {
+			options:{
+				compatibility : 'ie6', //设置兼容模式   
+        noAdvanced : true //取消高级特性 			
+			},
             Dialog: {
                 files: {
                     "<%= _path.Dialog %>styles/<%= _var.name %>/index.min.css":['<%= _path.Dialog %>css/common.css', '<%= _path.Dialog %>styles/<%= _var.name %>/index.css']

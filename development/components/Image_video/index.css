@@ -14,9 +14,3 @@
     height:100%;
     display:none;
 }
-.wrapper-img-video.loaded:hover video{
-    display:block;
-}
-.wrapper-img-video.loaded:hover img{
-    display:none;
-}

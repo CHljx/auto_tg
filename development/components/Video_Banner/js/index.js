@@ -62,6 +62,7 @@ define(["SQ"], function($) {
             $video.attr("src",$video.attr("data-src"));
         });
 
+		
     }
 });
 

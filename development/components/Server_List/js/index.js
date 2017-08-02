@@ -20,8 +20,17 @@ define(["SQ"], function($) {
         }
         // 从这里开始写你的代码
 
+
+		if($.browser.msie&&parseInt($.browser.version,10)==6){
+				var $this=$(__(".server-list")).find(__(".active"));
+				$this.find(__(".detail")).height($this.find(__(".img")).height()+5)
+		}
         $(__(".server-list")).on("mouseenter","li",function(){
-            $(this).addClass(__("active")).siblings().removeClass(__("active"));
+			var $this=$(this)
+           $this.addClass(__("active")).siblings().removeClass(__("active"));
+			if($.browser.msie&&parseInt($.browser.version,10)==6){
+				$this.find(__(".detail")).height($this.find(__(".img")).height()+5)
+			}
         });
     }
 });

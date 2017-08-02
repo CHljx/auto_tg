@@ -35,10 +35,10 @@
     display:block;
 }
 .server-list li.active .num{
-    background-color:orange;
+    background-color:#ffa500;
+	color:#fff;
 }
 .img{
-    float: left;
     margin-right: 13px;
     width: 126px;
     height: 86px;
@@ -47,7 +47,7 @@
     color: #999;
 }
 .btn{
-    background-color: orange;
+    background-color:#ffa500;
     color: #fff;
     outline: none;
     border: 0px;
@@ -55,7 +55,7 @@
     border-radius: 4px;
     cursor: pointer;
     position: absolute;
-    bottom: 0px;
+    bottom: 6px;
 }
 .brief .btn{
     right:0px;
@@ -74,4 +74,7 @@
     height: 15px;
     display: block;
     margin-top: 5px;
+}
+.link-img{
+	float:left;
 }

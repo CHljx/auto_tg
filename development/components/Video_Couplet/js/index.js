@@ -22,6 +22,7 @@ define(["SQ"], function($) {
         var $video= $(__(".video"));
         var $img= $(__(".img"));
         var bLazyLoad=$video.data("lazyload");
+		var $videoContainer=$(__(".wrapper-video"));
         function loadVideo(){
             $video.attr("src",$video.data("src"));
         }
@@ -40,6 +41,16 @@ define(["SQ"], function($) {
                 loadVideo();
             }
         }
+
+		if($.browser.msie&&parseInt($.browser.version,10)==6){
+			if($videoContainer.hasClass(__("fixed-left"))){
+				$videoContainer.css("left",-$videoContainer.width())
+			}else if($videoContainer.hasClass(__("fixed-right"))){
+				$videoContainer.css("right",-$videoContainer.width())
+			}else if($videoContainer.hasClass(__("fixed-br"))){
+				$videoContainer.css("right",-$videoContainer.width());
+			}
+		}
     }
 });
 
