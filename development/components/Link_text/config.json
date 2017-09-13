@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "ownerType": "",
-  "description": "",
+  "name": "Link_Text",
+  "ownerType": "TEXT",
+  "description": "文字链接",
   "options": {
     "script": false,
     "draggable": true,

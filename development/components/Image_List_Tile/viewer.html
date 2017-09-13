@@ -11,13 +11,13 @@
 <body>
 <div id="app">
     <div class="container-tile">
-        {{#each list}}
-            <div class="box-tile" >
-                <a class="link " id="box-plan-{{plan.value}}" target="_blank" href="{{href.value}}" data-type="{{type.value}}" data-track=""  data-plan-id="{{plan.value}}">
-                    <img class="img" src="{{img.value}}"/>
-                    <span class="btn">{{../btn.value}}</span>
-                </a>
-            </div>
+        {{#each list.value}}
+        <div class="box-tile" >
+            <a class="link " id="box-plan-{{plan.value}}" target="_blank" href="{{href.value}}" data-type="{{type.value}}" data-track=""  data-plan-id="{{plan.value}}">
+                <img class="img" src="{{img.value}}"/>
+                <span class="btn">{{../btn.value}}</span>
+            </a>
+        </div>
         {{/each}}
     </div>
 </div>
@@ -40,84 +40,33 @@
         var source   = $("#app").html();
         var template = Handlebars.compile(source);
         var context = {
-            "btn":{
-                "label":"按钮文字",
-                "value":"进入游戏"
+            "btn": {
+                "label": "按钮文字",
+                "value": "进入游戏1"
             },
-            list:[
-                {
-                    img:{
-                        "label": "背景图片",
-                        "value": "./images/test.jpg"
-                    },
-                    href:{
-                        "label": "跳转链接",
-                        "value": "http://www.37.com/"
-                    },
-                    type:{
-                        "label":"TypeId",
-                        "value":1
-                    },
-                    plan:{
-                        "lable":"计划ID",
-                        "value":269
+            "list": {
+                "lable":"图片列表",
+                "value": [
+                    {
+                        "img": {
+                            "label": "背景图片",
+                            "value": "./images/test.jpg"
+                        },
+                        "href": {
+                            "label": "跳转链接",
+                            "value": "http://www.37.com/"
+                        },
+                        "type": {
+                            "label": "TypeId",
+                            "value": 1
+                        },
+                        "plan": {
+                            "lable": "计划ID",
+                            "value": 269
+                        }
                     }
-                },
-                {
-                    img:{
-                        "label": "背景图片",
-                        "value": "./images/test.jpg"
-                    },
-                    href:{
-                        "label": "跳转链接",
-                        "value": "http://www.37.com/"
-                    },
-                    type:{
-                        "label":"TypeId",
-                        "value":1
-                    },
-                    plan:{
-                        "lable":"计划ID",
-                        "value":268
-                    }
-                },
-                {
-                    img:{
-                        "label": "背景图片",
-                        "value": "./images/test.jpg"
-                    },
-                    href:{
-                        "label": "跳转链接",
-                        "value": "http://www.37.com/"
-                    },
-                    type:{
-                        "label":"TypeId",
-                        "value":1
-                    },
-                    plan:{
-                        "lable":"计划ID",
-                        "value":267
-                    }
-                },
-                {
-                    img:{
-                        "label": "背景图片",
-                        "value": "./images/test.jpg"
-                    },
-                    href:{
-                        "label": "跳转链接",
-                        "value": "http://www.37.com/"
-                    },
-                    type:{
-                        "label":"TypeId",
-                        "value":1
-                    },
-                    plan:{
-                        "lable":"计划ID",
-                        "value":0
-                    }
-                }
-            ]
+                ]
+            }
         };
         $("#app").html( template(context));
         fn();

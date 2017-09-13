@@ -1,39 +1,46 @@
 {
-  "name": "",
-  "ownerType": "",
-  "description": "",
+  "name": "Image_List_Tile",
+  "ownerType": "IMAGE",
+  "description": "图片+按钮，已对接精准",
   "options": {
-    "script": false,
+    "script": true,
     "draggable": true,
     "resizableSelector": ".container-tile"
   },
   "html": {
-    "btn":{
-      "label":"按钮文字",
-      "value":"进入游戏"
+    "btn": {
+      "label": "按钮文字",
+      "value": "进入游戏"
     },
-    "list":[
-      {
-        "img":{
-          "label": "背景图片",
-          "value": "./images/test.jpg"
-        },
-        "href":{
-          "label": "跳转链接",
-          "value": "http://www.37.com/"
-        },
-        "type":{
-          "label":"TypeId",
-          "value":1
-        },
-        "plan":{
-          "lable":"计划ID",
-          "value":269
-        }
-      }
-    ]
+    "list": {
+        "lable":"图片列表",
+        "value": [
+          {
+            "img": {
+              "label": "背景图片",
+              "value": "./images/test.jpg"
+            },
+            "href": {
+              "label": "跳转链接",
+              "value": "http://www.37.com/"
+            },
+            "type": {
+              "label": "TypeId",
+              "value": 1
+            },
+            "plan": {
+              "label": "计划ID",
+              "value": 269
+            }
+          }
+        ]
+    }
   },
   "css": {
+    ".container-tile":{
+      "label":"容器",
+      "editable": ["width", "height"]
+    },
     ".box-tile":{
       "label":"图片",
       "editable": ["width", "height"]
@@ -44,7 +51,7 @@
     },
     ".btn:hover": {
       "label": "鼠标经过时",
-      "editable": ["background-image","background-color","color","line-height"]
+      "editable": ["background-image","background-color","color"]
     }
   }
 }

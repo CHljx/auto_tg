@@ -32,7 +32,11 @@ define(["SQ"], function($) {
             if(!$el.length){
                 return;
             }
-            $el.attr("href",planObj.click_url).attr("data-track",planObj.tracking);
+            var click_url=planObj.click_url;
+            if(param){
+                click_url = click_url.indexOf( "?" ) > -1 ?(click_url + "&" + param ):(click_url + "?" + param);
+            }
+            $el.attr("href",click_url).attr("data-track",planObj.tracking);
             $el.find(__(".img")).attr("src",planObj.banner.img);
         }
 
