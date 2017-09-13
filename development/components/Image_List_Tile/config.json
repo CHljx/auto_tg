@@ -1,0 +1,50 @@
+{
+  "name": "",
+  "ownerType": "",
+  "description": "",
+  "options": {
+    "script": false,
+    "draggable": true,
+    "resizableSelector": ".container-tile"
+  },
+  "html": {
+    "btn":{
+      "label":"按钮文字",
+      "value":"进入游戏"
+    },
+    "list":[
+      {
+        "img":{
+          "label": "背景图片",
+          "value": "./images/test.jpg"
+        },
+        "href":{
+          "label": "跳转链接",
+          "value": "http://www.37.com/"
+        },
+        "type":{
+          "label":"TypeId",
+          "value":1
+        },
+        "plan":{
+          "lable":"计划ID",
+          "value":269
+        }
+      }
+    ]
+  },
+  "css": {
+    ".box-tile":{
+      "label":"图片",
+      "editable": ["width", "height"]
+    },
+    ".btn": {
+      "label": "按钮",
+      "editable": ["width", "height", "background-image","background-color","color","line-height"]
+    },
+    ".btn:hover": {
+      "label": "鼠标经过时",
+      "editable": ["background-image","background-color","color","line-height"]
+    }
+  }
+}

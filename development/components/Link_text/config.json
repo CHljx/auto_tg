@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "ownerType": "",
+  "description": "",
+  "options": {
+    "script": false,
+    "draggable": true,
+    "resizableSelector": ""
+  },
+  "html": {
+    "href":{
+      "label":"跳转链接",
+      "value":"http://bdtg.37.com/s/1/727/4118.html?ad_type=804&uid=&wd=&clickid=&b="
+    },
+    "type":{
+      "label":"TypeId",
+      "value":"1"
+    },
+    "text":{
+      "label":"显示文字",
+      "value":"九天封神"
+    }
+  },
+  "css": {
+    ".link-text":{
+      "label":"",
+      "editable":["color"]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Button - dev</title>
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/common/style.css">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/build/bundle.css?v=0531">
+    <link rel="stylesheet" href="http://huodong.37.com/fe-editor/pc/dawn/css/perfect-scrollar.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div id="app">
+    <div class="container-tile">
+        {{#each list}}
+            <div class="box-tile" >
+                <a class="link " id="box-plan-{{plan.value}}" target="_blank" href="{{href.value}}" data-type="{{type.value}}" data-track=""  data-plan-id="{{plan.value}}">
+                    <img class="img" src="{{img.value}}"/>
+                    <span class="btn">{{../btn.value}}</span>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="http://huodong.37.com/fe-editor/pc/dawn/lib/handlebars.min.js"></script>
+<script src="http://ptres.37.com/js/sq/lib/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            SQ: "http://ptres.37.com/js/sq/lib/sq.core"
+        },
+        shim: {
+            "SQ": {
+                exports: "$"
+            }
+        }
+    });
+    require(["./js/index"], function(fn) {
+
+        var source   = $("#app").html();
+        var template = Handlebars.compile(source);
+        var context = {
+            "btn":{
+                "label":"按钮文字",
+                "value":"进入游戏"
+            },
+            list:[
+                {
+                    img:{
+                        "label": "背景图片",
+                        "value": "./images/test.jpg"
+                    },
+                    href:{
+                        "label": "跳转链接",
+                        "value": "http://www.37.com/"
+                    },
+                    type:{
+                        "label":"TypeId",
+                        "value":1
+                    },
+                    plan:{
+                        "lable":"计划ID",
+                        "value":269
+                    }
+                },
+                {
+                    img:{
+                        "label": "背景图片",
+                        "value": "./images/test.jpg"
+                    },
+                    href:{
+                        "label": "跳转链接",
+                        "value": "http://www.37.com/"
+                    },
+                    type:{
+                        "label":"TypeId",
+                        "value":1
+                    },
+                    plan:{
+                        "lable":"计划ID",
+                        "value":268
+                    }
+                },
+                {
+                    img:{
+                        "label": "背景图片",
+                        "value": "./images/test.jpg"
+                    },
+                    href:{
+                        "label": "跳转链接",
+                        "value": "http://www.37.com/"
+                    },
+                    type:{
+                        "label":"TypeId",
+                        "value":1
+                    },
+                    plan:{
+                        "lable":"计划ID",
+                        "value":267
+                    }
+                },
+                {
+                    img:{
+                        "label": "背景图片",
+                        "value": "./images/test.jpg"
+                    },
+                    href:{
+                        "label": "跳转链接",
+                        "value": "http://www.37.com/"
+                    },
+                    type:{
+                        "label":"TypeId",
+                        "value":1
+                    },
+                    plan:{
+                        "lable":"计划ID",
+                        "value":0
+                    }
+                }
+            ]
+        };
+        $("#app").html( template(context));
+        fn();
+    });
+</script>
+</body>
+</html>

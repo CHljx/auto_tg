@@ -1,0 +1,10 @@
+<div class="container-tile">
+    {{#each list}}
+    <div class="box-tile" >
+        <a class="link " id="box-plan-{{plan.value}}" target="_blank" href="{{href.value}}" data-type="{{type.value}}" data-track=""  data-plan-id="{{plan.value}}">
+            <img class="img" src="{{img.value}}"/>
+            <span class="btn">{{../btn.value}}</span>
+        </a>
+    </div>
+    {{/each}}
+</div>
