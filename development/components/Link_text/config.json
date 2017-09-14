@@ -18,7 +18,8 @@
     },
     "text":{
       "label":"显示文字",
-      "value":"九天封神"
+      "value":"九天封神",
+      "rich":true
     }
   },
   "css": {

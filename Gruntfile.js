@@ -42,7 +42,7 @@ module.exports = function(grunt){
                                  * 以 http 开头的不替换
                                  */
                                 .replace(/("|\(|')(\.\/)?images\//g, function(matched, p1) {
-                                    return p1 + "http://test.admin.tg.37wan.com/static/page_component/components/" + grunt.config.data._var.name + "/images/"
+                                    return p1 + "http://img.tg.37wan.com/static/page_component/components/" + grunt.config.data._var.name + "/images/"
                                 })
                                 .replace(/(\n)|(\s+(?={))/g, "")
                                 .replace(/{\s*/g, "{")
@@ -54,7 +54,7 @@ module.exports = function(grunt){
 
                         return content
                             .replace(/("|\(|')(\.\/)?images\//g, function(matched, p1) {
-                                return p1 + "http://huodong.37.com/fe-editor/res/publish/components/" + grunt.config.data._var.name + "/images/"
+                                return p1 + "http://img.tg.37wan.com/static/page_component/components/" + grunt.config.data._var.name + "/images/"
                             })
                     }
                 },
