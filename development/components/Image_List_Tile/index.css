@@ -9,6 +9,9 @@
     height: 152px;
     float: left;
     margin: 0px 8px 13px 0px;
+    border-color:#ddd;
+    border-style:solid;
+    border-width:1px;
 }
 .box-tile .img{
     width:100%;

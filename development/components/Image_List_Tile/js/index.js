@@ -22,9 +22,11 @@ define(["SQ"], function($) {
 
         var strategyUrl="http://ss2.a.he2d.com/mm9y86";
         var planIds=[];
+        var $imgs=[];
         $(__(".link")).each(function(){
             var $this=$(this);
-            var planId=$this.data("planId");
+            var $img=$this.find("img");
+            var planId=$this.data("plan");
             planId&&planIds.push(planId);
         });
 
@@ -34,16 +36,21 @@ define(["SQ"], function($) {
             }
             var click_url=planObj.click_url;
             if(param){
-                click_url = click_url.indexOf( "?" ) > -1 ?(click_url + "&" + param ):(click_url + "?" + param);
+                sParam=$.param($.extend(param,{
+                    site_id: __SITE_ID,
+                    ad_type:$el.data("type")
+                }));
+                click_url = click_url.indexOf( "?" ) > -1 ?(click_url + "&" + sParam ):(click_url + "?" + sParam);
             }
-            $el.attr("href",click_url).attr("data-track",planObj.tracking);
-            $el.find(__(".img")).attr("src",planObj.banner.img);
+            $el.attr("href",click_url).attr("data-track",planObj.tracking||"");
+            $img.hasClass("J_lazyloaded")?$img.attr("src","").attr("src",planObj.banner.img):$img.attr("data-src",planObj.banner.img);
         }
 
-        planIds.length&&$.ajax({
+        planIds.length&&($(__(".container-tile")).css("visibility","hidden"),$.ajax({
             url:strategyUrl,
             data:{
-                cids:planIds.join(',')
+                cids:planIds.join(','),
+                uid:param.uid
             },
             type:"GET",
             dataType:"JSONP"
@@ -56,9 +63,10 @@ define(["SQ"], function($) {
                     }
                 }
             }
+            $(__(".container-tile")).css("visibility","visible");
         }).fail(function(){
-
-        })
+            $(__(".container-tile")).css("visibility","visible");
+        }))
     }
 });
 

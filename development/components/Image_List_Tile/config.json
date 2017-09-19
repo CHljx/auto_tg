@@ -43,7 +43,7 @@
     },
     ".box-tile":{
       "label":"图片",
-      "editable": ["width", "height"]
+      "editable": ["width", "height","border-color","border-width"]
     },
     ".btn": {
       "label": "按钮",
