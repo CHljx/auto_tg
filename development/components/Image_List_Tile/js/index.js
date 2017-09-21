@@ -22,10 +22,8 @@ define(["SQ"], function($) {
 
         var strategyUrl="http://ss2.a.he2d.com/mm9y86";
         var planIds=[];
-        var $imgs=[];
         $(__(".link")).each(function(){
             var $this=$(this);
-            var $img=$this.find("img");
             var planId=$this.data("plan");
             planId&&planIds.push(planId);
         });
@@ -34,7 +32,9 @@ define(["SQ"], function($) {
             if(!$el.length){
                 return;
             }
+
             var click_url=planObj.click_url;
+            var $img=$el.find("img");
             if(param){
                 sParam=$.param($.extend(param,{
                     site_id: __SITE_ID,
@@ -43,7 +43,7 @@ define(["SQ"], function($) {
                 click_url = click_url.indexOf( "?" ) > -1 ?(click_url + "&" + sParam ):(click_url + "?" + sParam);
             }
             $el.attr("href",click_url).attr("data-track",planObj.tracking||"");
-            $img.hasClass("J_lazyloaded")?$img.attr("src","").attr("src",planObj.banner.img):$img.attr("data-src",planObj.banner.img);
+            $img.hasClass("J_lazyloaded")?$img.attr("src",planObj.banner.img):$img.attr("data-src",planObj.banner.img);
         }
 
         planIds.length&&($(__(".container-tile")).css("visibility","hidden"),$.ajax({
